@@ -1,7 +1,7 @@
 // dependencies
 const rlSync = require("readline-sync");
 const MESSAGES = require('./calculator_messages.json');
-let LANGUAGE = 'en'
+let LANGUAGE = 'en';
 
 // functions
 function prompt(msg) {
@@ -12,7 +12,7 @@ function invalidNum(num) {
   return num.trimStart() === '' || Number.isNaN(Number(num));
 }
 
-function displayMessage(message, lang='en') {
+function displayMessage(message, lang = 'en') {
   return MESSAGES[lang][message];
 }
 
@@ -21,7 +21,7 @@ console.log(displayMessage('welcomeMessage', LANGUAGE));
 let tempLanguage = rlSync.question().toLowerCase();
 
 while (tempLanguage !== 'en' && tempLanguage !== 'ru') {
-  prompt(displayMessage('tryAgain', LANGUAGE))
+  prompt(displayMessage('tryAgain', LANGUAGE));
   tempLanguage = rlSync.question().toLowerCase();
 }
 LANGUAGE = tempLanguage;
@@ -75,7 +75,7 @@ while (true) {
     answer = rlSync.question().toLowerCase();
   }
   if (answer === 'n') {
-    prompt(displayMessage('thankYouMessage', LANGUAGE))
+    prompt(displayMessage('thankYouMessage', LANGUAGE));
     break;
   }
 }
