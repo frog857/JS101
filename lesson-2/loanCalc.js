@@ -1,4 +1,4 @@
-// dependencies & constants
+// dependencies
 let rlSync = require('readline-sync');
 
 // functions
@@ -6,11 +6,11 @@ function prompt(msg) {
   console.log('=> ' + msg);
 }
 
+// program body
 let loanAmount;
 let APR;
 let loanDurationMonths;
 
-// basic program loop
 while (true) {
   // welcome and first prompt
   prompt("Welcome to loan calc!\nLet's start off with your loan amount. How much do you owe?");
@@ -28,7 +28,7 @@ while (true) {
   }
 
   prompt('What is your APR? (Example: type "12" for a 12% APR)');
-  APR = parseInt(rlSync.question(), 10) / 100;
+  APR = parseFloat(rlSync.question(), 10) / 100; // parseFloat cuts off trailing symbols
 
   while (!(APR > 0 && APR < 1)) {
     prompt('Please type a valid APR.');
@@ -43,7 +43,9 @@ while (true) {
     loanDurationMonths = Number(rlSync.question()) * 12;
   }
 
-  let monthlyPayment = loanAmount * ((APR / 12) / (1 - Math.pow((1 + (APR / 12)), (-loanDurationMonths))));
+  let monthlyPayment = loanAmount * ((APR / 12) /
+    (1 - Math.pow((1 + (APR / 12)), (-loanDurationMonths))));
+
   let totalPayment = monthlyPayment * loanDurationMonths;
   let totalInterest = totalPayment - loanAmount;
 

@@ -1,28 +1,26 @@
 {
   "en": {
     "welcomeMessage": "Welcome to the terminal calculator! \nWhat language will you use: ru) Russian en) English",
-    "tryAgain": "That wasn't valid",
     "firstMessage": "What is the first number?",
-    "errorMessage": "That's not a number! Try again...",
+    "invalidNum": "That's not a number! Try again...",
     "secondMessage": "What is the second number?",
     "thirdMessage": "What operation should be performed? \n 1) Add 2) Subtract 3) Multiply 4) Divide",
-    "operationErrorMessage2": "Not a valid operation! Enter 1, 2, 3 or 4 plz",
-    "finalMessage1": "The result is ",
-    "finalMessage2": "! Would you like to perform another calculation? y/n: ",
+    "invalidOperaton": "Not a valid operation! Enter 1, 2, 3 or 4 plz",
+    "resultMessage1": "The result is ",
+    "resultMessage2": "! Would you like to perform another calculation? y/n: ",
     "thankYouMessage": "Thanks for using the calc!",
-    "tryAgainMessage": "Sorry, what was that?"
+    "tryAgain": "Sorry, what was that?"
   },
   "ru": {
     "welcomeMessage": "Добро пожаловать в Калкюлатор!",
-    "tryAgain": "Nyet!",
     "firstMessage": "Какой первый номер",
-    "errorMessage": "это не номер дурак. еще раз, пожалуйсто",
+    "invalidNum": "это не номер дурак. еще раз, пожалуйсто",
     "secondMessage": "какой второй номер",
     "thirdMessage": "какую операцию следует выполнить? \n 1) складывать 2) вычитать 3) умножать 4) делить",
-    "operationErrorMessage2": "Недопустимая операция! Введите 1, 2, 3 или 4, пожалуйста.",
-    "finalMessage1": "Резултат: ",
-    "finalMessage2": ". Хотите выполнить еще один расчет? y/n: ",
+    "invalidOperaton": "Недопустимая операция! Введите 1, 2, 3 или 4, пожалуйста.",
+    "resultMessage1": "Резултат: ",
+    "resultMessage2": ". Хотите выполнить еще один расчет? y/n: ",
     "thankYouMessage": "спасибо, что заглянули. Пока",
-    "tryAgainMessage": "Чё это сказали?"
+    "tryAgain": "Чё это сказали?"
   }
 }
