@@ -9,18 +9,18 @@ function prompt(msg) {
 
 function computeSum(num) {
   let sum = 0;
-  for (let i = 1; i <= num; i++) {
-    sum += i;
+  for (let index = 1; index <= num; index++) {
+    sum += index;
   }
   return sum;
 }
 
 function computeProduct(num) {
-  let sum = 1;
+  let product = 1;
   for (let i = 1; i <= num; i++) {
-    sum *= i;
+    product *= i;
   }
-  return sum;
+  return product;
 }
 while (true) {
   let userNum = rlSync.question(prompt("Enter a positive integer\n"));
@@ -34,13 +34,3 @@ while (true) {
     console.log("Something went wrong");
   }
 }
-
-
-// get a positive integer from the user
-// ask the user for sum or product
-// if sum
-  // calcuate the sum of 1 to num inclusive
-  // display
-// if product
-  // calculate product of 1 to num inclusive
-  // display that
