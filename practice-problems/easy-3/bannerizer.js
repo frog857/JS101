@@ -1,19 +1,6 @@
-// function logInBox(str) {
-//   console.log(
-//     "+-" + "-".repeat(str.length) + "-+\n" +
-//     "| " + " ".repeat(str.length) + " |\n" +
-//     "| " + str + " |\n" +
-//     "| " + " ".repeat(str.length) + " |\n" +
-//     "+-" + "-".repeat(str.length) + "-+\n"
-//   );
-// }
-
 function logInBox2(message, maxWidth = Infinity) {
   if (maxWidth > message.length) maxWidth = message.length;
-  let arrOfStrings = [];
-
-  //arrOfStrings = returnLines(message, maxWidth);
-
+  
   let numOfLines = !message.length ? 1 : Math.ceil(message.length / maxWidth);
 
   while (numOfLines > 0) {
@@ -38,6 +25,8 @@ function displayBanner(lines, maxWidth) {
   console.log(emptyLine);
   console.log(horizontalRule);
 }
+
+
 
 function returnLines(str, maxWidth) {
   // takes in a long string, and a max width
