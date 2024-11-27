@@ -22,14 +22,17 @@ type coercions are a feature of JavaScript as a weakly typed language. When we a
 Here, will attempt to coerce the value of one operand to compare it successfuly with the other.
 ---
 ### numbers, including NaN and Infinity
+Numbers are a primitive type in Javascript. Examples are 13, -5, 0, 2.56, Infinity, -Infinity, and NaN. Numbers are sometimes coerced from strings, either explicitly, or implicitly, by Javscript. Common operands for numbers are *, +, /, -, and %.
 ---
 ### strings
 ---
 ### template literals
 ---
 ### boolean n vs. truthiness
+The difference between truthiness and booleans in Javascript is sometimes difficult to distinguish. A boolean value is either `true` or `false` as reserved by Javascript keywords. There are other values that can be implicity coerced to "truthy" or "falsy" values. Falsy values include null, undefined, 0, -1, 0n, "" (empty string), and NaN. When evaluated in a boolean context, these values or evaluated expressions will behave like the Boolean value False. All other evaluated expressions or values not included in the above are truthy, and behave like Boolean true.
 ---
 ### undefined and null
+
 ---
 ### array and object syntax
 ---
