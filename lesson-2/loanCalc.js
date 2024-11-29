@@ -6,37 +6,36 @@ function prompt(msg) {
   console.log('=> ' + msg);
 }
 
-// program body
-let loanAmount;
-let APR;
-let loanDurationMonths;
+function formatLoan(input) {
+  if (input[0] === "$") input = input.slice(1);
+  if (input.includes(",")) {
+    input = input.split(",").join("");
+  }
+  return Number(input);
+}
 
+// program body
 while (true) {
   // welcome and first prompt
   prompt("Welcome to loan calc!\nLet's start off with your loan amount. How much do you owe?");
-  loanAmount = rlSync.question();
-
-  if (loanAmount[0] === "$") {
-    loanAmount = loanAmount.slice(1);
-  }
-  loanAmount = Number(loanAmount);
+  let loanAmount = formatLoan(rlSync.question());
 
   // validation
-  while (Number.isNaN(loanAmount) || loanAmount === 0) {
+  while (Number.isNaN(loanAmount) || loanAmount <= 0) {
     prompt('Type a valid number');
-    loanAmount = Number(rlSync.question());
+    loanAmount = formatLoan(rlSync.question());
   }
 
   prompt('What is your APR? (Example: type "12" for a 12% APR)');
-  APR = parseFloat(rlSync.question(), 10) / 100; // parseFloat cuts off trailing symbols
+  let APR = parseFloat(rlSync.question(), 10) / 100; // parseFloat cuts off trailing symbols. i.e. %
 
   while (!(APR > 0 && APR < 1)) {
     prompt('Please type a valid APR.');
-    APR = Number(rlSync.question()) / 100;
+    APR = parseFloat(rlSync.question(), 10) / 100;
   }
 
   prompt("Lastly, what is your Loan's duration, in years?");
-  loanDurationMonths = Number(rlSync.question()) * 12;
+  let loanDurationMonths = Number(rlSync.question()) * 12;
 
   while (!(loanDurationMonths > 0 && loanDurationMonths < 1201)) {
     prompt("Please type a valid duration. Max: 100 years");
@@ -49,8 +48,10 @@ while (true) {
   let totalPayment = monthlyPayment * loanDurationMonths;
   let totalInterest = totalPayment - loanAmount;
 
-  prompt("\nYour monthly payment comes out to: $" + monthlyPayment.toFixed(2) +
-    "\nYour total amount paid will be $" + totalPayment.toFixed(2) +
+  prompt("With a loan amount of $" + (loanAmount.toFixed(2)) + " at " + (APR * 100) + "% APR:" +
+    "\nYour monthly payment comes out to: $" + monthlyPayment.toFixed(2) +
+    "\nYour total amount paid after " + (loanDurationMonths / 12) +
+      " years will be $" + totalPayment.toFixed(2) +
     "\nYour total interest paid will be $" + totalInterest.toFixed(2) + "\n");
 
   prompt("Need another calculation? y/n");
