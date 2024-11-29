@@ -16,11 +16,9 @@ function formatLoan(input) {
 
 // program body
 while (true) {
-  // welcome and first prompt
   prompt("Welcome to loan calc!\nLet's start off with your loan amount. How much do you owe?");
   let loanAmount = formatLoan(rlSync.question());
 
-  // validation
   while (Number.isNaN(loanAmount) || loanAmount <= 0) {
     prompt('Type a valid number');
     loanAmount = formatLoan(rlSync.question());
