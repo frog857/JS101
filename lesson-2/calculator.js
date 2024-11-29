@@ -21,7 +21,7 @@ prompt(returnMessage('welcomeMessage', 'en'));
 let language = rlSync.question().toLowerCase();
 
 while (!VALID_LANGUAGES.includes(language)) {
-  prompt(returnMessage('tryAgain', language));
+  prompt(returnMessage('tryAgain', language = "en"));
   language = rlSync.question().toLowerCase();
 }
 

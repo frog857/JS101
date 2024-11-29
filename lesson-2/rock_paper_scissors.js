@@ -8,6 +8,7 @@ const WINNING_COMBOS = {
   Spock: ['scissors', 'rock'],
   lizard: ['Spock', 'paper']
 };
+
 const SCORE = {
   player: 0,
   computer: 0,
