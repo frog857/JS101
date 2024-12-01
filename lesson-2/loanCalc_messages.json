@@ -1,0 +1,12 @@
+{
+  "en": {
+    "welcomeMessage": "Welcome to loan calc!\nLet's start off with your loan amount. How much do you owe?",
+    "invalidLoan": "Type a valid loan amount.",
+    "promptAPR": "What is your APR? (Example: type \"12\" for a 12% APR)",
+    "invalidAPR": "Please type a valid APR.",
+    "promptDuration": "Lastly, what is your Loan's duration, in years?",
+    "invalidDuration": "Please type a valid duration. Max: 100 years",
+    "endMessage": "Need another calculation? y/n",
+    "comeAgain": "What was that? y/n"
+  }
+}
