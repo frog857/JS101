@@ -1,7 +1,7 @@
 // dependencies
 const rlSync = require('readline-sync');
-const MESSAGES = require('./loanCalc_messages.json')
-let lang = "en"
+const MESSAGES = require('./loanCalc_messages.json');
+let lang = "en";
 
 // functions
 function prompt(msg) {
@@ -9,8 +9,10 @@ function prompt(msg) {
 }
 
 const invalidAPR = (APR) => (!(APR > 0 && APR < 1));
-const invalidLoan = (loanAmount) => (Number.isNaN(loanAmount) || loanAmount <= 0);
-const invalidLoanDuration = (loanDurationMonths) => !(loanDurationMonths > 0 && loanDurationMonths < 1201);
+const invalidLoan = (loanAmount) =>
+  (Number.isNaN(loanAmount) || loanAmount <= 0);
+const invalidLoanDuration = (loanDurationMonths) =>
+  !(loanDurationMonths > 0 && loanDurationMonths < 1201);
 
 function returnMessage(message, lang) {
   return MESSAGES[lang][message];
@@ -82,8 +84,8 @@ while (true) {
   }
 
   if (answer === 'n') {
-  clearLastLine();
-  prompt("Thanks for stopping by, and good luck on that loan!")
-  break;
+    clearLastLine();
+    prompt("Thanks for stopping by, and good luck on that loan!");
+    break;
   }
 }

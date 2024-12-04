@@ -1,6 +1,3 @@
-let numbers = [1, 2, 3];
-numbers[6] = 5;
-numbers[9] = 8;
+let flintstones = { Fred: 0, Wilma: 1, Barney: 2, Betty: 3, Bambam: 4, Pebbles: 5 };
 
-console.log(numbers);
-console.log(numbers[5]);
+console.log(...Object.entries(flintstones));
