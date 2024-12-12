@@ -110,19 +110,19 @@ console.log(greet(person.name));
 
 ```javascript
 /*
-Objects:
+Objects: 3
 - person object literal (ln 3)
 - greet function body (ln 11)
 - person (ln 15)
 
-Variables:
+Variables: 6
 - person (ln 3)
 - greeting (ln 9)
 - greet, name (ln 11)
 - greeting, name (ln 12)
 
 
-Primitives:
+Primitives: 12
 - "name", "Alice" (ln 4)
 - "age", 30 (ln 5)
 - "city", "New York" ln 6

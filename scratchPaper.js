@@ -1,3 +1,8 @@
-let flintstones = { Fred: 0, Wilma: 1, Barney: 2, Betty: 3, Bambam: 4, Pebbles: 5 };
+let num1 = 5;
+let num2 = 10;
+let num3 = 12;
 
-console.log(...Object.entries(flintstones));
+function add(num1, num2) {
+  let total = num1 + num2;
+  return total;
+}

@@ -15,16 +15,13 @@ if (anyNegatives(numbers)) {
 }
 ```
 
-The string `"The array contains no negatives!"` will be logged to the console.
+The string `"The array contains no negatives!"` will be logged to the console. This is due to the fact that the `.forEach` method in Javascript will always return `undefined`. 
 
-On line 7, the a global variable `numbers` is declared and initialized to the arrray `[1, 2, 3, -5, 4]`. On line 9, we enter an `if/else` statement, checking the evaluation of `anyNegatives(numbers)`. 
+Within the `if/else` block, we invoke the `anyNegatives` function passing in `numbers`, as an argument. Within the function body, we iterate over each of the elements of the passed in array `arr`, and check to see if the element is less than 0. If so, we return `true`. Otherwise we do nothing.
 
-Passing in `numbers` to the `arr` parameter, we then enter the function body. This function will return the result of calling the `.forEach()` method on the  function scoped `arr` variable. Within the `.forEach()` iteration, we check to see if each element is less than 0. If so, that iteration will return true. If all iterations are made, the default return will be `undefined`. 
+However, as noted at the beginning, regardless of what happens in a `.forEach` loop, the value returned will be undefined. Since this is what is returned from the function `anyNegatives`, the `if/else` conditional will evaluate as falsey, and we will enter the else block. Thus, we see the corresponding log.
 
-However, since `.forEach()` is solely iterates over an array, the return value will be ignored. Instead, `.forEach()` will always return `undefined`. This value is returned from the `anyNegatives(numbers)` invocation on line 9, and the expression evaluates to falsey. 
-
-This causes the thread of execution to skip the first block of code, and instead execute the line of code on line 12, resulting in ``"The array contains no negatives!"`` being logged to the console.
-
+This code illustrates we must understand return values and how where they are placed in code determines what is evaluated. 
 
 ---
 **WRONG**
@@ -55,3 +52,31 @@ We are using filter, which only appends an element to the new array if the retur
  Each time we iterate, our `idx` is incremented by 1. However, since the elements are being shifted to the right on each iteration, the iterations of `filter` will always be carried out on `"a"` We have determined that each iteration will pass the test for filter, and thus an array with three elements, `["a", "a", "a"]` will be assigned to `arr2`
 
 On the last two lines of code, we log these arrays. `[2, 1, 0, 'a', 'b', 'c']` and `["a", "a", "a"]`
+
+---
+What does the following code do? What gets logged to the console and why?
+```javascript
+function hasEvenNumber(arr) {
+  return arr.map(num => {
+    if (num % 2 === 0) return true;
+  });
+}
+let values = [1, 3, 5, 8, 11];
+
+if (hasEvenNumber(values)) {
+  console.log("The array contains an even number!");
+} else {
+  console.log("The array contains no even numbers!");
+}
+
+```
+
+In this code, we have a function declaration, a variable declaration with the value of an array, and an `if/else` conditional statement. This code will log `"The array contains an even  number!"` to the console. 
+
+In the first test case of the `if/else` block, we invoke `hasEvenNumber` passing in the argument `values`. Within the function body, we return the results of invoking the `.map()` method on the passed in array. The callback of this function iterates through the elements of `[1, 3, 5, 8, 11]`, calling the provided callback function on the element. 
+
+Since the callback function is a conditional, the returned array will contain either `true` or `undefined`. Regardless, an array is returned from `hasEvenNumber`, and thus, is a truthy. This causes the code to execute the first block of code in the `if/else` conditional, and thus we see the log. 
+
+The key concepts at play here are:
+- understanding the map method and it's return value
+- understanding how truthy and falsy vales will affect an `if/else` conditional.
