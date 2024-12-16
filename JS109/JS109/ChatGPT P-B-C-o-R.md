@@ -17,6 +17,7 @@ console.log(colors);
 | Reference1      |     |                            |     | Reference2     |
 |                 | _\| |                            | \|_ |                |
 |                 |     | `["red", "green", "blue"]` |     |                |
+|                 |     |                            |     |                |
 
 ### Suggested Improvements to Answer 1:
 

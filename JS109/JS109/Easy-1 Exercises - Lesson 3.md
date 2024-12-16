@@ -6,7 +6,7 @@ let munstersDescription = "the Munsters are CREEPY and Spooky.";
 let newStr = munstersDescription[0].toUpperCase() + munstersDescription.slice(1);
 ```
 
-We can create a new string that containts all lowercase letters, except for the first character, by declaring a new variable and assigning it to an expression. Within this expression, we access the first character of `munstersDescription` using bracket notation, and call the `toUpperCase()` method. We then concatenate the remaining characters by using the `slice(1)` method on `munstersDescription`. Note we must pass in `1` as an argument to slice, to access only characters from the first index (inclusive) to the end.
+We can create a new string that contains all lowercase letters, except for the first character, by declaring a new variable and assigning it to an expression. Within this expression, we access the first character of `munstersDescription` using bracket notation, and call the `toUpperCase()` method. We then concatenate the remaining characters by using the `slice(1)` method on `munstersDescription`. Note we must pass in `1` as an argument to slice, to access only characters from the first index (inclusive) to the end.
 
 
 Add entries for Marilyn and Spot to the object:

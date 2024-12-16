@@ -73,9 +73,11 @@ if (hasEvenNumber(values)) {
 
 In this code, we have a function declaration, a variable declaration with the value of an array, and an `if/else` conditional statement. This code will log `"The array contains an even  number!"` to the console. 
 
-In the first test case of the `if/else` block, we invoke `hasEvenNumber` passing in the argument `values`. Within the function body, we return the results of invoking the `.map()` method on the passed in array. The callback of this function iterates through the elements of `[1, 3, 5, 8, 11]`, calling the provided callback function on the element. 
+In the first test case of the `if/else` block, we invoke `hasEvenNumber` passing in the argument `values`. Within the function body, we return the result of invoking the `.map()` method on the local variable `arr`. The map method will return a new array with the return values of a callback function, which is called on each element of the calling array. 
 
-Since the callback function is a conditional, the returned array will contain either `true` or `undefined`. Regardless, an array is returned from `hasEvenNumber`, and thus, is a truthy. This causes the code to execute the first block of code in the `if/else` conditional, and thus we see the log. 
+In our case, the array will contain a mixture of `true` and `undefined` values, given that any even numbers will return `true`, and otherwise the function's default return value is `undefined`. Regardless, an array is returned from `hasEvenNumber`, and thus, is a truthy value. This causes the code to execute the first block of code in the `if/else` conditional, and thus we see the log.
+
+Furthermore, it is pertinent to note than even an empty array will evaluate as truthy. We might append the `.length` property to an evaluated array to determine whether we want to represent truthiness or falsiness based on some data.
 
 The key concepts at play here are:
 - understanding the map method and it's return value
