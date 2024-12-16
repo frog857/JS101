@@ -4,7 +4,7 @@
 
 ```javascript
 function messWithVars(one, two, three) {
-  one = ["two"];
+  one[0] = ["two"];
   two = ["three"];
   three = ["one"];
 }
@@ -43,6 +43,6 @@ console.log(object);
 
 The last line of code will output `{ first: [1, 2] }` The key concept at play here is variables as pointers, and how javascript stores references in memory for objects. Specifically, that a mutated object will be changed, no matter what alias we use to reference it.
 
-We declare a global variable `object` which is initialized and contains a reference to the object `{ first: [1] }`. We then declare another variable `numArray` and initialize it to the value on the property `first`. This value is the array `[1]`. We must note that `numArray` contains a *reference* to this array. 
+We declare a global variable `object` which is initialized and contains a reference to the object `{ first: [1] }`. We then declare another variable `numArray` and initialize it to the value on the property `first`. This value is **a reference** to the array `[1]`. `numArray` will now contain the same *reference* to this array. 
 
 Thus, when we call the destructive `.push()` method on this variable, we are mutating the array `[1]` in global memory. We expect to see `[1, 2]` logged on the second to last line. We will also see the mutated array reflected when logging `object`. 

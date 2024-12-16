@@ -95,8 +95,8 @@ function exclaim() {
 }
 
 let word = "hello";
-let capitalizedWord = capitalize(word);
-let exclaimedWord = exclaim(capitalizedWord);
+let capitalizedWord = capitalize();
+let exclaimedWord = exclaim();
 
 console.log(word);
 console.log(capitalizedWord);

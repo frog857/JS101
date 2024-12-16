@@ -11,7 +11,7 @@ const shallowCopy = { ...original };
 
 shallowCopy.a = 10;
 shallowCopy.b.c = 20;
-shallowCopy.b = {a: "hello"};
+// shallowCopy.b = {a: "hello"};
 
 console.log(original.a, original.b.c);
 console.log(shallowCopy.a, shallowCopy.b.c);
