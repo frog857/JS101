@@ -1,8 +1,8 @@
-let addOne = 5;
+let arr = [1, 2, 3, 4];
 
-function mutater(adder) {
-  adder['a'] = 'mutated';
-}
 
-mutater(addOne);
-console.log(addOne);
+arr.forEach((num, idx, arr) => {
+  arr[idx] += 1;
+});
+
+console.log(arr);
